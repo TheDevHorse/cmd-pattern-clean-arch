@@ -1,9 +1,9 @@
 package com.thedevhorse.cmdpatterncleanarch.usecase;
 
 import com.thedevhorse.cmdpatterncleanarch.domain.Order;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service("IN_PROGRESS")
+@Component("IN_PROGRESS")
 public class InProgressOrderUseCaseInputPort implements OrderUseCaseInputPort {
 
     @Override

@@ -1,9 +1,9 @@
 package com.thedevhorse.cmdpatterncleanarch.usecase;
 
 import com.thedevhorse.cmdpatterncleanarch.domain.Order;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service("CANCELED")
+@Component("CANCELED")
 public class CanceledOrderUseCaseInputPort implements OrderUseCaseInputPort {
 
     @Override
