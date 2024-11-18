@@ -1,5 +1,6 @@
 package com.thedevhorse.cmdpatterncleanarch.controller;
 
+import com.thedevhorse.cmdpatterncleanarch.controller.dto.OrderRequest;
 import com.thedevhorse.cmdpatterncleanarch.domain.Order;
 import com.thedevhorse.cmdpatterncleanarch.usecase.OrderUseCaseInputPort;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +18,16 @@ public class OrderController {
     }
 
     @PostMapping
-    public void createOrder() {
-        orderUseCaseInputPort.get("IN_PROGRESS").execute(new Order());
+    public void createOrder(OrderRequest orderRequest) {
+        orderUseCaseInputPort.get("IN_PROGRESS").execute(mapToOrder(orderRequest));
     }
 
     @PutMapping("/{command}")
-    public void updateOrder(@PathVariable String command) {
-        orderUseCaseInputPort.get(command).execute(new Order());
+    public void updateOrder(@PathVariable String command, OrderRequest orderRequest) {
+        orderUseCaseInputPort.get(command).execute(mapToOrder(orderRequest));
+    }
+
+    private Order mapToOrder(OrderRequest orderRequest) {
+        return null;
     }
 }
