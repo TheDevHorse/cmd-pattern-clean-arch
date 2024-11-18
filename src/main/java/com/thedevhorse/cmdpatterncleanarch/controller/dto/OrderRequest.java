@@ -1,4 +1,8 @@
 package com.thedevhorse.cmdpatterncleanarch.controller.dto;
 
-public record OrderRequest() {
+import com.thedevhorse.cmdpatterncleanarch.domain.Status;
+
+import java.util.UUID;
+
+public record OrderRequest(UUID orderId, Status status) {
 }
