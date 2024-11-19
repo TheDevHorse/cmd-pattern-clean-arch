@@ -4,5 +4,5 @@ import com.thedevhorse.cmdpatterncleanarch.domain.Status;
 
 import java.util.UUID;
 
-public record OrderRequest(UUID orderId, Status status) {
+public record OrderRequest(UUID orderId, Status status, double price) {
 }

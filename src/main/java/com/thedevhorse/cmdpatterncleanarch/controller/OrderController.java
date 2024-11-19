@@ -2,9 +2,11 @@ package com.thedevhorse.cmdpatterncleanarch.controller;
 
 import com.thedevhorse.cmdpatterncleanarch.controller.dto.OrderRequest;
 import com.thedevhorse.cmdpatterncleanarch.domain.Order;
-import com.thedevhorse.cmdpatterncleanarch.domain.Status;
 import com.thedevhorse.cmdpatterncleanarch.usecase.OrderUseCaseInputPort;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
@@ -37,7 +39,8 @@ public class OrderController {
     private Order mapToOrder(OrderRequest orderRequest) {
         return  Order.create(
                 orderRequest.orderId(),
-                orderRequest.status()
+                orderRequest.status(),
+                orderRequest.price()
         );
     }
 }
