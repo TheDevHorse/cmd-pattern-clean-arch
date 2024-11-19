@@ -10,17 +10,23 @@ public class Order {
 
     private Status status;
 
+    private double price;
+
     private Order(UUID orderId,
-            Status status) {
+                  Status status,
+                  double price) {
         setOrderId(orderId);
         setStatus(orderId, status);
+        this.price = price;
     }
 
     public static Order create(final UUID orderId,
-                        final Status status){
+                               final Status status,
+                               final double price) {
         return new Order(
                 orderId,
-                status
+                status,
+                price
         );
     }
 
@@ -30,6 +36,10 @@ public class Order {
 
     public Status status() {
         return status;
+    }
+
+    public double price() {
+        return price;
     }
 
     private void setStatus(UUID orderId, Status status) {
