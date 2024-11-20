@@ -30,6 +30,20 @@ public class Order {
         );
     }
 
+    public void cancelOrder() {
+        if (status.equals(Status.COMPLETED)) {
+            throw new IllegalArgumentException("Cannot cancel a completed order");
+        }
+        setStatus(orderId, Status.CANCELED);
+    }
+
+    public void completeOrder() {
+        if (status.equals(Status.CANCELED)) {
+            throw new IllegalArgumentException("Cannot complete a canceled order");
+        }
+        setStatus(orderId, Status.COMPLETED);
+    }
+
     public UUID orderId() {
         return orderId;
     }

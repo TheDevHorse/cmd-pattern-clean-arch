@@ -16,7 +16,8 @@ public class CanceledOrderUseCase implements OrderUseCaseInputPort {
 
     @Override
     public void execute(Order newOrder) {
-        //Todo validate the status
+        Order order = orderRepositoryOutputPort.getOrder(newOrder.orderId());
+        order.cancelOrder();
         orderProxyOutputPort.cancelOrder(newOrder);
         orderRepositoryOutputPort.createOrder(newOrder);
     }

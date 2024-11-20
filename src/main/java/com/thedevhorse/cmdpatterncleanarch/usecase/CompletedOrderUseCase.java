@@ -16,7 +16,8 @@ public class CompletedOrderUseCase implements OrderUseCaseInputPort {
 
     @Override
     public void execute(Order newOrder) {
-        //Todo validate the status
+        Order order = orderRepositoryOutputPort.getOrder(newOrder.orderId());
+        order.completeOrder();
         orderProxyOutputPort.sendOrder(newOrder);
         orderRepositoryOutputPort.updateOrder(newOrder);
     }
