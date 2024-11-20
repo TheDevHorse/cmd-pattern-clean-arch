@@ -4,11 +4,11 @@ import com.thedevhorse.cmdpatterncleanarch.domain.Order;
 import org.springframework.stereotype.Component;
 
 @Component("IN_PROGRESS")
-public class InProgressOrderUseCaseInputPort implements OrderUseCaseInputPort {
+public class InProgressOrderUseCase implements OrderUseCaseInputPort {
 
     private final OrderRepositoryOutputPort orderRepositoryOutputPort;
 
-    public InProgressOrderUseCaseInputPort(OrderRepositoryOutputPort orderRepositoryOutputPort) {
+    public InProgressOrderUseCase(OrderRepositoryOutputPort orderRepositoryOutputPort) {
         this.orderRepositoryOutputPort = orderRepositoryOutputPort;
     }
 
