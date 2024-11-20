@@ -10,7 +10,7 @@ public class Order {
 
     private Status status;
 
-    private double price;
+    private final double price;
 
     private Order(UUID orderId,
                   Status status,
