@@ -34,14 +34,14 @@ public class Order {
         if (status.equals(Status.COMPLETED)) {
             throw new IllegalArgumentException("Cannot cancel a completed order");
         }
-        setStatus(orderId, Status.CANCELED);
+        this.status = Status.CANCELED;
     }
 
     public void completeOrder() {
         if (status.equals(Status.CANCELED)) {
             throw new IllegalArgumentException("Cannot complete a canceled order");
         }
-        setStatus(orderId, Status.COMPLETED);
+        this.status = Status.COMPLETED;
     }
 
     public UUID orderId() {
