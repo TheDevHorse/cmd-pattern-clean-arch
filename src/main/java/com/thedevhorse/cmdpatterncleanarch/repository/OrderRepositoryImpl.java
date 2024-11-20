@@ -4,6 +4,8 @@ import com.thedevhorse.cmdpatterncleanarch.domain.Order;
 import com.thedevhorse.cmdpatterncleanarch.usecase.OrderRepositoryOutputPort;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 public class OrderRepositoryImpl implements OrderRepositoryOutputPort {
 
@@ -15,5 +17,10 @@ public class OrderRepositoryImpl implements OrderRepositoryOutputPort {
     @Override
     public void updateOrder(Order order) {
         throw new UnsupportedOperationException("updateOrder is not implemented yet.");
+    }
+
+    @Override
+    public Order getOrder(UUID orderId) {
+        throw new UnsupportedOperationException("getOrder is not implemented yet.");
     }
 }
