@@ -6,8 +6,14 @@ import org.springframework.stereotype.Component;
 @Component("IN_PROGRESS")
 public class InProgressOrderUseCaseInputPort implements OrderUseCaseInputPort {
 
-    @Override
-    public void execute(Order order) {
+    private final OrderRepositoryOutputPort orderRepositoryOutputPort;
 
+    public InProgressOrderUseCaseInputPort(OrderRepositoryOutputPort orderRepositoryOutputPort) {
+        this.orderRepositoryOutputPort = orderRepositoryOutputPort;
+    }
+
+    @Override
+    public void execute(final Order order) {
+        orderRepositoryOutputPort.createOrder(order);
     }
 }

@@ -9,7 +9,11 @@ public class OrderProxyImpl implements OrderProxyOutputPort {
 
     @Override
     public void sendOrder(Order order) {
-        // Dispatches the order using an external provider.
         throw new UnsupportedOperationException("sendOrder is not implemented yet.");
+    }
+
+    @Override
+    public void cancelOrder(Order order) {
+        throw new UnsupportedOperationException("cancel is not implemented yet.");
     }
 }

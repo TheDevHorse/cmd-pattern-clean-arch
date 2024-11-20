@@ -5,4 +5,6 @@ import com.thedevhorse.cmdpatterncleanarch.domain.Order;
 public interface OrderProxyOutputPort {
 
     void sendOrder(Order order);
+
+    void cancelOrder(Order order);
 }
