@@ -3,10 +3,7 @@ package com.thedevhorse.cmdpatterncleanarch.controller;
 import com.thedevhorse.cmdpatterncleanarch.controller.dto.OrderRequest;
 import com.thedevhorse.cmdpatterncleanarch.domain.Order;
 import com.thedevhorse.cmdpatterncleanarch.usecase.OrderUseCaseInputPort;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -14,23 +11,23 @@ import java.util.Map;
 @RequestMapping("/api/order")
 public class OrderController {
 
-    private final Map<String, OrderUseCaseInputPort> orderUseCaseInputPort;
+    private final Map<String, OrderUseCaseInputPort> orderUseCaseInputPortMap;
 
     public OrderController(Map<String, OrderUseCaseInputPort> orderUseCaseInputPort) {
-        this.orderUseCaseInputPort = orderUseCaseInputPort;
+        this.orderUseCaseInputPortMap = orderUseCaseInputPort;
     }
 
     @PostMapping
-    public void createOrder(OrderRequest orderRequest) {
-        orderUseCaseInputPort.get(orderRequest.status().name())
+    public void createOrder(@RequestBody OrderRequest orderRequest) {
+        orderUseCaseInputPortMap.get(orderRequest.status().name())
                 .execute(
                         mapToOrder(orderRequest)
                 );
     }
 
     @PutMapping()
-    public void updateOrder(OrderRequest orderRequest) {
-        orderUseCaseInputPort.get(orderRequest.status().name())
+    public void updateOrder(@RequestBody OrderRequest orderRequest) {
+        orderUseCaseInputPortMap.get(orderRequest.status().name())
                 .execute(
                         mapToOrder(orderRequest)
                 );
