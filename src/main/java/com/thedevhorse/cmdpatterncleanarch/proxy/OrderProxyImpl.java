@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderProxyImpl implements OrderProxyOutputPort {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderRepositoryImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(OrderProxyImpl.class);
 
     @Override
     public void sendOrder(Order order) {
@@ -19,6 +19,6 @@ public class OrderProxyImpl implements OrderProxyOutputPort {
 
     @Override
     public void cancelOrder(Order order) {
-        logger.info("Processing sendOrder for Order ID: {}", order.orderId());
+        logger.info("Processing cancelOrder for Order ID: {}", order.orderId());
     }
 }
