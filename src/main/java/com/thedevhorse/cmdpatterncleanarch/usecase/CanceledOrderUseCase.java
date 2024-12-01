@@ -19,6 +19,6 @@ public class CanceledOrderUseCase implements OrderUseCaseInputPort {
         Order order = orderRepositoryOutputPort.getOrder(newOrder.orderId());
         order.cancelOrder();
         orderProxyOutputPort.cancelOrder(newOrder);
-        orderRepositoryOutputPort.createOrder(newOrder);
+        orderRepositoryOutputPort.updateOrder(newOrder);
     }
 }
