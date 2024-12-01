@@ -1,7 +1,6 @@
 package com.thedevhorse.cmdpatterncleanarch.proxy;
 
 import com.thedevhorse.cmdpatterncleanarch.domain.Order;
-import com.thedevhorse.cmdpatterncleanarch.repository.OrderRepositoryImpl;
 import com.thedevhorse.cmdpatterncleanarch.usecase.OrderProxyOutputPort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
